@@ -74,7 +74,7 @@ shape_3d = np.loadtxt('examples_cartoon/{}_face_close_mouth.txt'.format(DEMO_CH)
 au_data = []
 au_emb = []
 ains = glob.glob1('examples', '*.wav')
-ains = [item for item in ains if item is not 'tmp.wav']
+ains = [item for item in ains if item != 'tmp.wav']
 ains.sort()
 for ain in ains:
     os.system('ffmpeg -y -loglevel error -i examples/{} -ar 16000 examples/tmp.wav'.format(ain))
